@@ -1,7 +1,25 @@
 'use strict';
 
 var WeatherAppModule = (function () {
-    const toggleShowAndHide = () => {
+    const displayWeatherData = (data) => {
+        const cityName = document.getElementById('citytitle');
+        const content1 = document.getElementById('content1');
+        const content2 = document.getElementById('content2');
+
+        const text = ` The temperature is ${Math.floor(data.main.temp)} Kelvin , a humidity of ${Math.floor(data.main.humidity)} % 
+        and a pressure of ${Math.floor(data.main.pressure)} hPa`;
+
+        const text2 = document.createElement('p');
+
+        cityName.innerText = data.name;
+        content1.innerText = text;
+        text2.innerText = data.weather[0].description;
+        content2.innerText = '';
+
+        const img = document.createElement('img');
+        img.setAttribute('src', `http://openweathermap.org/img/w/${data.weather[0].icon}.png`);
+
+        content2.append(text2, img);
 
     };
     const getCityWeather = (city) => {
@@ -10,7 +28,8 @@ var WeatherAppModule = (function () {
                 return response.json()
             })
             .then(function (response) {
-                console.log(response)
+                displayWeatherData(response);
+                console.log(response);
             });
     };
     const getFormData = () => {

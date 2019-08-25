@@ -9,14 +9,22 @@
   </head>
   <body>
     <div class="container">
-      <form action="#" novalidate>
-        <input
-          type="text"
-          placeholder="Enter the name of your city"
-          id="city"
-        />
-      </form>
-      <button onclick="WeatherAppModule.getFormData()">Submit</button>
+      <div class="form">
+        <form action="#" novalidate>
+          <input
+            type="text"
+            placeholder="Enter the name of your city"
+            id="city"
+          />
+        </form>
+        <button onclick="WeatherAppModule.getFormData()">Submit</button>
+      </div>
+      <div class="card">
+        <h3>City name : <span id="citytitle"> </span></h3>
+        <p id="content1"></p>
+        <h4>Current Weather Conditions</h4>
+        <p id="content2"></p>
+      </div>
     </div>
     <script src="assets/js/main.js"></script>
   </body>
