@@ -1,6 +1,6 @@
 'use strict';
 
-var WeatherAppModule = (function () {
+var weatherAppModule = (function () {
     const displayWeatherData = (data) => {
         const cityName = document.getElementById('citytitle');
         const content1 = document.getElementById('content1');
@@ -30,7 +30,7 @@ var WeatherAppModule = (function () {
             .then(function (response) {
                 displayWeatherData(response);
                 console.log(response);
-            });
+            }).catch(alert('Enter a valid city name'));
     };
     const getFormData = () => {
         const temp = document.getElementById('city').value;
