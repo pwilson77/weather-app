@@ -9,6 +9,7 @@
   </head>
   <body>
     <div class="container">
+      <div id="error-con">Enter the city name correctly</div>
       <div class="form">
         <form action="#" novalidate>
           <input
@@ -16,6 +17,11 @@
             placeholder="Enter the name of your city"
             id="city"
           />
+          <label for="temp">Choose which unit you prefer</label>
+          <select id="temp">
+            <option value="metric">Celcius</option>
+            <option value="imperial">Fahrenheit</option>
+          </select>
         </form>
         <button onclick="weatherAppModule.getFormData()">Submit</button>
       </div>
