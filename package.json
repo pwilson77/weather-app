@@ -2,9 +2,10 @@
   "name": "weather-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/pwilson77/weather-app#readme",
   "devDependencies": {
-    "eslint": "^6.2.2"
+    "eslint": "^6.2.2",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
   }
 }
